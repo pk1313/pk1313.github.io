@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pk1313 - Android Apps</title>
+    <meta name="description" content="pk1313 developer site: Gamepad mouse, pickip and FlipMirror. Downloads, privacy policies and contact information.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --bg-color: #f8f9fa;
+            --text-color: #2c3e50;
+            --container-bg: #ffffff;
+            --border-color: #e9ecef;
+            --title-color: #1a2a3a;
+            --muted-color: #7f8c8d;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary-color: #5dade2;
+                --bg-color: #1a1a1a;
+                --text-color: #e0e0e0;
+                --container-bg: #2d2d2d;
+                --border-color: #3d3d3d;
+                --title-color: #ffffff;
+                --muted-color: #9aa5a8;
+            }
+        }
+
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 860px;
+            width: 100%;
+            background-color: var(--container-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+        }
+
+        header {
+            border-bottom: 2px solid var(--primary-color);
+            margin-bottom: 24px;
+            padding-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        h1 {
+            color: var(--title-color);
+            font-size: 1.8rem;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: var(--muted-color);
+            font-size: 0.95rem;
+            margin-top: 6px;
+        }
+
+        .lang-toggle {
+            display: flex;
+            gap: 6px;
+        }
+
+        .lang-toggle button {
+            font-family: inherit;
+            font-size: 0.85rem;
+            padding: 6px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            cursor: pointer;
+        }
+
+        .lang-toggle button[aria-pressed="true"] {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: #ffffff;
+        }
+
+        h2 {
+            color: var(--title-color);
+            font-size: 1.25rem;
+            margin: 30px 0 14px;
+            font-weight: 600;
+        }
+
+        p { margin: 0 0 14px; }
+
+        .intro {
+            background-color: rgba(52, 152, 219, 0.1);
+            border-left: 4px solid var(--primary-color);
+            padding: 14px 16px;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .app {
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+
+        .app h3 {
+            color: var(--title-color);
+            font-size: 1.15rem;
+            margin: 0 0 4px;
+            font-weight: 700;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin: 10px 0 12px;
+        }
+
+        .tag {
+            font-size: 0.78rem;
+            padding: 3px 9px;
+            border-radius: 20px;
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            color: var(--muted-color);
+        }
+
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .links a {
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 8px 14px;
+            border-radius: 6px;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .links a.primary {
+            background-color: var(--primary-color);
+            color: #ffffff;
+        }
+
+        a { color: var(--primary-color); }
+
+        .contact {
+            background-color: var(--bg-color);
+            padding: 14px 16px;
+            border-radius: 8px;
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 0.88rem;
+            color: var(--muted-color);
+            border-top: 1px solid var(--border-color);
+            padding-top: 18px;
+        }
+
+        /* Language switching: only the matching language block is shown. */
+        html[data-lang="en"] [data-lang="ko"] { display: none; }
+        html[data-lang="ko"] [data-lang="en"] { display: none; }
+
+        @media (max-width: 600px) {
+            .container { padding: 22px; }
+            h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div>
+                <h1>pk1313</h1>
+                <div class="subtitle" data-lang="en">Android apps &amp; documents</div>
+                <div class="subtitle" data-lang="ko">안드로이드 앱 및 문서</div>
+            </div>
+            <div class="lang-toggle">
+                <button type="button" data-set="en">English</button>
+                <button type="button" data-set="ko">한국어</button>
+            </div>
+        </header>
+
+        <div class="intro">
+            <div data-lang="en">
+                <p>This is the developer website for the Google Play apps published by pk1313. Each app card links to its Google Play listing, privacy policy and source page.</p>
+            </div>
+            <div data-lang="ko">
+                <p>pk1313이 Google Play에 게시한 앱의 개발자 웹사이트입니다. 각 앱 카드에서 Google Play 페이지, 개인정보처리방침, 소스 페이지로 이동할 수 있습니다.</p>
+            </div>
+        </div>
+
+        <h2 data-lang="en">Apps on Google Play</h2>
+        <h2 data-lang="ko">Google Play 등록 앱</h2>
+
+        <div class="app">
+            <h3>Gamepad mouse</h3>
+            <div class="tags">
+                <span class="tag">Accessibility</span>
+                <span class="tag">Gamepad</span>
+                <span class="tag">DeX</span>
+                <span class="tag">In-app purchase</span>
+            </div>
+            <div data-lang="en">
+                <p>Control a phone, tablet or smart monitor (Samsung DeX mode) with a single gamepad: analog-stick cursor movement, stick scrolling, media play/volume/skip keys, custom key mapping and a two-beulsik on-screen keyboard in Korean, English and Spanish.</p>
+                <p>Free with banner ads; the Pro upgrade removes ads and unlocks the advanced features.</p>
+            </div>
+            <div data-lang="ko">
+                <p>게임패드 하나로 스마트폰·태블릿·스마트 모니터(DeX 모드)를 제어하는 접근성 기반 앱입니다. 아날로그 스틱으로 커서를 이동하고, 스틱으로 화면을 스크롤하며, 미디어 재생·볼륨·스킵 조작, 커스텀 키 매핑, 두벌식 화면 키보드(한국어·영어·스페인어)를 지원합니다.</p>
+                <p>배너 광고 기반으로 무료이며, Pro 구매 시 광고가 제거되고 고급 기능이 열립니다.</p>
+            </div>
+            <div class="links">
+                <a class="primary" href="https://play.google.com/store/apps/details?id=com.pkyul13.gamepadmouse">Google Play</a>
+                <a href="https://pk1313.github.io/gamepadmouse-privacy/">Privacy Policy</a>
+            </div>
+        </div>
+
+        <div class="app">
+            <h3>pickip</h3>
+            <div class="tags">
+                <span class="tag">Photo widget</span>
+                <span class="tag">Vault</span>
+                <span class="tag">On-device storage</span>
+                <span class="tag">Subscription</span>
+            </div>
+            <div data-lang="en">
+                <p>Image search that continues onto the home screen: photo widgets and a private vault. Search history, bookmarked image links and preferences stay on the device, and downloads happen only when you request them.</p>
+            </div>
+            <div data-lang="ko">
+                <p>이미지 검색을 홈 화면 사진 위젯과 개인 보관함으로 이어주는 앱입니다. 검색 기록, 저장한 이미지 링크, 설정값은 기기 내부에만 저장되고, 이미지는 다운로드를 요청한 경우에만 기기에 저장됩니다.</p>
+            </div>
+            <div class="links">
+                <a class="primary" href="https://play.google.com/store/apps/details?id=com.pkyul13.pickip">Google Play</a>
+                <a href="https://pk1313.github.io/pickip/">Privacy Policy</a>
+                <a href="https://github.com/pk1313/pickip">GitHub</a>
+            </div>
+        </div>
+
+        <h2 data-lang="en">Other projects</h2>
+        <h2 data-lang="ko">기타 프로젝트</h2>
+
+        <div class="app">
+            <h3>FlipMirror</h3>
+            <div class="tags">
+                <span class="tag">GitHub release (APK)</span>
+                <span class="tag">Shizuku</span>
+                <span class="tag">No root</span>
+            </div>
+            <div data-lang="en">
+                <p>16:9 screen-mirroring optimizer for screen-mirroring capable Android phones (Galaxy Z Flip/Fold, Galaxy S/A, Pixel, Xiaomi and more). Removes the black bars on external monitors using Shizuku, without a PC or root access.</p>
+            </div>
+            <div data-lang="ko">
+                <p>미러링을 지원하는 안드로이드 스마트폰(갤럭시 Z 플립/폴드, 갤럭시 S/A, 픽셀, 샤오미 등)용 범용 16:9 외부 화면 최적화 앱입니다. Shizuku를 사용해 외부 모니터의 검은 여백을 제거하며, PC나 루트 권한이 필요하지 않습니다.</p>
+            </div>
+            <div class="links">
+                <a class="primary" href="https://github.com/pk1313/flipmirror">GitHub</a>
+                <a href="https://github.com/pk1313/flipmirror/releases/latest">Release / APK</a>
+            </div>
+        </div>
+
+        <h2 data-lang="en">Contact</h2>
+        <h2 data-lang="ko">연락처</h2>
+        <div class="contact">
+            <p data-lang="en">Questions, bug reports and privacy inquiries: <a href="mailto:pkyul13@gmail.com">pkyul13@gmail.com</a></p>
+            <p data-lang="ko">문의, 오류 신고, 개인정보 관련 문의: <a href="mailto:pkyul13@gmail.com">pkyul13@gmail.com</a></p>
+        </div>
+
+        <footer>
+            <div data-lang="en">
+                <p>&copy; 2026 pk1313. All rights reserved. &nbsp;·&nbsp; <a href="https://pk1313.github.io/app-ads.txt">app-ads.txt</a> &nbsp;·&nbsp; <a href="https://github.com/pk1313">GitHub</a></p>
+            </div>
+            <div data-lang="ko">
+                <p>&copy; 2026 pk1313. All rights reserved. &nbsp;·&nbsp; <a href="https://pk1313.github.io/app-ads.txt">app-ads.txt</a> &nbsp;·&nbsp; <a href="https://github.com/pk1313">GitHub</a></p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        (function () {
+            var root = document.documentElement;
+            var buttons = document.querySelectorAll('.lang-toggle button');
+
+            function apply(lang) {
+                root.setAttribute('data-lang', lang);
+                root.setAttribute('lang', lang === 'ko' ? 'ko' : 'en');
+                buttons.forEach(function (b) {
+                    b.setAttribute('aria-pressed', String(b.getAttribute('data-set') === lang));
+                });
+                try { localStorage.setItem('pk1313-lang', lang); } catch (e) {}
+            }
+
+            var saved = null;
+            try { saved = localStorage.getItem('pk1313-lang'); } catch (e) {}
+            apply(saved === 'ko' || saved === 'en' ? saved : (navigator.language || 'en').toLowerCase().indexOf('ko') === 0 ? 'ko' : 'en');
+
+            buttons.forEach(function (b) {
+                b.addEventListener('click', function () { apply(b.getAttribute('data-set')); });
+            });
+        })();
+    </script>
+</body>
+</html>
