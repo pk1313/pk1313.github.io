@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>pk1313 - Android Apps</title>
     <meta name="description" content="pk1313 developer site: Gamepad mouse, pickip and FlipMirror. Downloads, privacy policies and contact information.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
@@ -121,11 +122,32 @@
             margin-bottom: 16px;
         }
 
+        .app-head {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .app-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 14px;
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-color);
+            flex: 0 0 auto;
+        }
+
         .app h3 {
             color: var(--title-color);
             font-size: 1.15rem;
             margin: 0 0 4px;
             font-weight: 700;
+        }
+
+        .store-note {
+            font-size: 0.8rem;
+            color: var(--muted-color);
+            margin: 0;
         }
 
         .tags {
@@ -219,7 +241,13 @@
         <h2 data-lang="ko">Google Play 등록 앱</h2>
 
         <div class="app">
-            <h3>Gamepad mouse</h3>
+            <div class="app-head">
+                <img class="app-icon" src="assets/gamepadmouse.png" width="192" height="192" loading="lazy" alt="Gamepad mouse app icon">
+                <div>
+                    <h3>Gamepad mouse</h3>
+                    <p class="store-note">Google Play &middot; com.pkyul13.gamepadmouse</p>
+                </div>
+            </div>
             <div class="tags">
                 <span class="tag">Accessibility</span>
                 <span class="tag">Gamepad</span>
@@ -241,7 +269,13 @@
         </div>
 
         <div class="app">
-            <h3>pickip</h3>
+            <div class="app-head">
+                <img class="app-icon" src="assets/pickip.png" width="192" height="192" loading="lazy" alt="pickip app icon">
+                <div>
+                    <h3>pickip</h3>
+                    <p class="store-note">Google Play &middot; com.pkyul13.pickip</p>
+                </div>
+            </div>
             <div class="tags">
                 <span class="tag">Photo widget</span>
                 <span class="tag">Vault</span>
@@ -265,7 +299,13 @@
         <h2 data-lang="ko">기타 프로젝트</h2>
 
         <div class="app">
-            <h3>FlipMirror</h3>
+            <div class="app-head">
+                <img class="app-icon" src="assets/flipmirror.png" width="192" height="192" loading="lazy" alt="FlipMirror app icon">
+                <div>
+                    <h3>FlipMirror</h3>
+                    <p class="store-note">GitHub &middot; pk1313/flipmirror</p>
+                </div>
+            </div>
             <div class="tags">
                 <span class="tag">GitHub release (APK)</span>
                 <span class="tag">Shizuku</span>
